@@ -1,0 +1,70 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #45d678;
+
+    font-family: sans-serif;
+}
+#board{
+  position: relative;
+   height: 650px;
+   width: 350px;
+   left: 35%;
+   margin-top: 20px;;
+   background-color: #292929;
+   overflow: hidden;
+
+}
+.line{
+    position: absolute;
+    height: 150px;
+    width: 4%;
+    margin-left: 48%;
+    background-color: rgba(255,255,255,0.5);
+}
+#line-1{
+    bottom: 0;
+}
+#line-2{
+    bottom:250px;
+}
+#line-3{
+    bottom: 300;
+}
+.car-player1{
+  width: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 44%;
+}
+#score-div{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 35px;
+    background-color: white;
+    color: #454545;
+    padding: 10px;
+    box-shadow: 4px 4px 0px 1px #808080;
+
+}
+.btn{
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 35px;
+  background-color: white;
+  color: #454545;
+  padding: 10px;
+  box-shadow: 4px 4px 0px 1px #808080;
+  width: 150px;
+}
+
+#help{
+	text-align: center;
+}
+.obstacles{
+  width: 40px;
+  position: absolute;
+}
