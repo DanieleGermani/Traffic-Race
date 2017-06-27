@@ -6,18 +6,26 @@ Board.prototype.createObstacles = function(){
   var intervalId = setInterval(function () {
 
 var obstacle = new Obstacles(this.obstacleNumber);
-  }, 1500);
-  /*setInterval(function () {
-    var obstacle1 = new Obstacles();
-  }, 5000);
-  setInterval(function () {
-    var obstacle2 = new Obstacles();
-  }, 12000);*/
-
+  }, 2000);
 
 };
 $( ".c-button .btn-start" ).click(function() {
   alert( "Handler for .click() called." );
+
+
+  setTimeout(function(){
+
+//  $('#score').text(2322);
+}, 1000);
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,10 +1,9 @@
 function Obstacles() {
   this.positionX = this.getRandomPositionX();
-  this.positionY = 100;
-  this.speed = 2;
+  this.positionY = -100;
+  this.speed = 3;
   this.osbstacleNumber = 0;
-  this.obstacleId = [];
-  //this.getRandomNumber();
+  this.obstacleId = []; 
   this.drawObstacles();
   this.moveObstacles();
 
@@ -14,7 +13,7 @@ function Obstacles() {
 
 
 Obstacles.prototype.getRandomPositionX = function() {
-  return Math.floor(Math.random() * 360);
+  return Math.floor(Math.random() * 320);
 };
 
 Obstacles.prototype.drawObstacles = function() {
@@ -24,7 +23,7 @@ Obstacles.prototype.drawObstacles = function() {
     top: this.positionY,
     left: this.positionX
   }).attr("id", "obstacles" + this.osbstacleNumber);
-  /*var obstacle2 = $('<img class="carOb" src="img/car3.png" width="40px">').addClass("obstacles").css({
+  /*var obstacle1 = $('<img class="carOb" src="img/car3.png" width="40px">').addClass("obstacles").css({
     top: this.positionY,
     left: this.positionX
   });*/
@@ -33,8 +32,7 @@ Obstacles.prototype.drawObstacles = function() {
   $('#board').append(obstacle);
   this.obstacleId.push("obstacles" + this.obstacleNumber);
 
-  /*Obstacles.prototype.clearObstacles = function() {
-    $('#board .carOb ').remove();*/
+
 
 };
 
@@ -42,14 +40,14 @@ Obstacles.prototype.moveObstacles = function() {
   var that = this;
 
   var intervalId = setInterval(function() {
-    console.log("entro a move");
+    //console.log("entro a move");
     var obstaclesArray = $('.obstacles');
     for (var i = 0; i < obstaclesArray.length; i++) {
       var x = $("#" + obstaclesArray[i].id).position().top;
       if (x < 650) {
 
         $(".obstacles").css({
-          top: x +=   2
+          top: x += 5
         });
       } else {
         $("#" + obstaclesArray[i].id).remove();
@@ -61,4 +59,3 @@ Obstacles.prototype.moveObstacles = function() {
   }, 200);
 
 };
-//Obstacles.prototype.moveObstacles();

@@ -1,7 +1,6 @@
 
 $(document).on('keydown', function(e){
   var x = $(".car-player1").position().left;
- //alert(x);
    console.log($(".car-player1").position());
    if(e.keyCode === 37){
     if(x <= 5){
