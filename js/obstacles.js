@@ -1,10 +1,13 @@
 function Obstacles() {
   this.positionX = this.getRandomPositionX();
-  this.positionY = -100;
+  this.positionY = 100;
   this.speed = 2;
+  this.osbstacleNumber = 0;
+  this.obstacleId = [];
   //this.getRandomNumber();
   this.drawObstacles();
   this.moveObstacles();
+
   console.log(this);
 
 }
@@ -15,39 +18,47 @@ Obstacles.prototype.getRandomPositionX = function() {
 };
 
 Obstacles.prototype.drawObstacles = function() {
-  var obstacle1 = $('<img class="carOb" src="img/car2.png" width="40px">').addClass("obstacles").css({
+
+  console.log(this.osbstacleNumber);
+  var obstacle = $('<img src="img/car2.png" width="40px">').addClass("obstacles").css({
     top: this.positionY,
     left: this.positionX
-  });
-
-  var obstacle2 = $('<img class="carOb" src="img/car3.png" width="40px">').addClass("obstacles").css({
+  }).attr("id", "obstacles" + this.osbstacleNumber);
+  /*var obstacle2 = $('<img class="carOb" src="img/car3.png" width="40px">').addClass("obstacles").css({
     top: this.positionY,
     left: this.positionX
-  });
+  });*/
 
-  var obstacles = [obstacle1, obstacle2];
-  $('#board').append(obstacles[Math.floor(Math.random() * obstacles.length)]);
+  //var obstacles = [obstacle1, obstacle2];
+  $('#board').append(obstacle);
+  this.obstacleId.push("obstacles" + this.obstacleNumber);
 
-
-
-};
-Obstacles.prototype.clearObstacles = function() {
-  $('#board .carOb ').remove();
+  /*Obstacles.prototype.clearObstacles = function() {
+    $('#board .carOb ').remove();*/
 
 };
 
 Obstacles.prototype.moveObstacles = function() {
   var that = this;
-  console.log(that);
-  setInterval(function() {
-    intervalId = setInterval(function() {
-      if (that.positionY < 650) {
+
+  var intervalId = setInterval(function() {
+    console.log("entro a move");
+    var obstaclesArray = $('.obstacles');
+    for (var i = 0; i < obstaclesArray.length; i++) {
+      var x = $("#" + obstaclesArray[i].id).position().top;
+      if (x < 650) {
+
         $(".obstacles").css({
-          top: that.positionY += 1
+          top: x +=   2
         });
+      } else {
+        $("#" + obstaclesArray[i].id).remove();
+
       }
-    }, 2000);
-  });
+    }
+
+
+  }, 200);
 
 };
 //Obstacles.prototype.moveObstacles();
