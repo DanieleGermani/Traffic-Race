@@ -41,7 +41,7 @@ body {
 #score-div{
     position: absolute;
     margin-top: 20%;
-    margin-left: 10%;
+    margin-left: 2%;
     font-size: 35px;
     background-color: white;
     color: #454545;
@@ -52,7 +52,7 @@ body {
 .btn{
   position: absolute;
   margin-top: 5%;
-  margin-left: 10%;
+  margin-left: 2%;
   font-size: 35px;
   background-color: white;
   color: #454545;

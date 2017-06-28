@@ -3,6 +3,7 @@ var player = new Player();
 var time = new TimerCount();
 
 
+
 function Game() {
 }
 
@@ -15,6 +16,7 @@ $( "#start" ).click(function() {
   board.createObstacles();
   time._checkTimer();
   player.movementPlayer();
+  
 
 
 });

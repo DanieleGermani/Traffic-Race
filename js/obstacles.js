@@ -5,6 +5,12 @@ function Obstacles(obstacleNumber) {
   this.positionY = -20;
   this.speed = 0;
 }
+Obstacles.prototype.checkObstacles = function() {
+  if ($(".car-player").collision(".obstacles").length > 0) {
+    console.log('me la he pegao!');
+  }
+
+};
 
 Obstacles.prototype.getRandomPositionX = function() {
   return Math.floor(Math.random() * 360);
@@ -21,6 +27,9 @@ Obstacles.prototype.drawObstacle = function() {
   numberId++;
 };
 
+
+
+
 Obstacles.prototype.moveObstacles = function() {
   console.log('el numero es : ' + numberId);
   switch (numberId) {
@@ -30,12 +39,15 @@ Obstacles.prototype.moveObstacles = function() {
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle0');
-          var speed = 10;
+          var speed = 25;
           $('#obstacle0').css({
             top: topPos += speed
           });
         } else {
-          $("#obstacle0").remove();
+          $("#obstacle0").css({
+            top: topPos = -20,
+          });
+
         }
 
       }, 300);
@@ -47,12 +59,14 @@ Obstacles.prototype.moveObstacles = function() {
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle1');
-          var speed = 10;
+          var speed = 30;
           $('#obstacle1').css({
             top: topPos += speed
           });
         } else {
-          $("#obstacle1").remove();
+          $("#obstacle1").css({
+            top: topPos = -20,
+          });
         }
       }, 300);
       break;
@@ -62,12 +76,14 @@ Obstacles.prototype.moveObstacles = function() {
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle2');
-          var speed = 10;
+          var speed = 15;
           $('#obstacle2').css({
             top: topPos += speed
           });
         } else {
-          $("#obstacle2").remove();
+          $("#obstacle2").css({
+            top: topPos = -20,
+          });
         }
       }, 300);
       break;
@@ -77,14 +93,15 @@ Obstacles.prototype.moveObstacles = function() {
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle3');
-          var speed = 10;
+          var speed = 34;
           $('#obstacle3').css({
             top: topPos += speed
           });
         } else {
-          $("#obstacle3").remove();
+          $("#obstacle3").css({
+            top: topPos = -20,
+          });
         }
-
       }, 300);
 
       break;
