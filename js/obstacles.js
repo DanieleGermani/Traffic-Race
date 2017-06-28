@@ -1,61 +1,95 @@
-function Obstacles() {
+var numberId = 0;
+
+function Obstacles(obstacleNumber) {
   this.positionX = this.getRandomPositionX();
-  this.positionY = -100;
-  this.speed = 3;
-  this.osbstacleNumber = 0;
-  this.obstacleId = []; 
-  this.drawObstacles();
-  this.moveObstacles();
-
-  console.log(this);
-
+  this.positionY = -20;
+  this.speed = 0;
 }
 
-
 Obstacles.prototype.getRandomPositionX = function() {
-  return Math.floor(Math.random() * 320);
+  return Math.floor(Math.random() * 360);
 };
 
-Obstacles.prototype.drawObstacles = function() {
-
-  console.log(this.osbstacleNumber);
-  var obstacle = $('<img src="img/car2.png" width="40px">').addClass("obstacles").css({
+Obstacles.prototype.drawObstacle = function() {
+  var width = $('#board').width();
+  var newObstacle = $('<img src="img/car2.png" width="40px">').addClass('obstacles').attr('id', 'obstacle' +
+    numberId).css({
     top: this.positionY,
     left: this.positionX
-  }).attr("id", "obstacles" + this.osbstacleNumber);
-  /*var obstacle1 = $('<img class="carOb" src="img/car3.png" width="40px">').addClass("obstacles").css({
-    top: this.positionY,
-    left: this.positionX
-  });*/
-
-  //var obstacles = [obstacle1, obstacle2];
-  $('#board').append(obstacle);
-  this.obstacleId.push("obstacles" + this.obstacleNumber);
-
-
-
+  });
+  $('#board').append(newObstacle);
+  numberId++;
 };
 
 Obstacles.prototype.moveObstacles = function() {
-  var that = this;
+  console.log('el numero es : ' + numberId);
+  switch (numberId) {
+    case 1:
+      var topPos = $('#obstacle0').position().top;
+      var intervalMoveObsta0 = setInterval(function() {
+        var obstacleArray;
+        if (topPos < 650) {
+          obstacleArray = $('#obstacle0');
+          var speed = 10;
+          $('#obstacle0').css({
+            top: topPos += speed
+          });
+        } else {
+          $("#obstacle0").remove();
+        }
 
-  var intervalId = setInterval(function() {
-    //console.log("entro a move");
-    var obstaclesArray = $('.obstacles');
-    for (var i = 0; i < obstaclesArray.length; i++) {
-      var x = $("#" + obstaclesArray[i].id).position().top;
-      if (x < 650) {
+      }, 300);
 
-        $(".obstacles").css({
-          top: x += 5
-        });
-      } else {
-        $("#" + obstaclesArray[i].id).remove();
+      break;
+    case 2:
+      topPos = $('#obstacle1').position().top;
+      var intervalMoveObsta1 = setInterval(function() {
+        var obstacleArray;
+        if (topPos < 650) {
+          obstacleArray = $('#obstacle1');
+          var speed = 10;
+          $('#obstacle1').css({
+            top: topPos += speed
+          });
+        } else {
+          $("#obstacle1").remove();
+        }
+      }, 300);
+      break;
+    case 3:
+      topPos = $('#obstacle2').position().top;
+      var intervalMoveObsta2 = setInterval(function() {
+        var obstacleArray;
+        if (topPos < 650) {
+          obstacleArray = $('#obstacle2');
+          var speed = 10;
+          $('#obstacle2').css({
+            top: topPos += speed
+          });
+        } else {
+          $("#obstacle2").remove();
+        }
+      }, 300);
+      break;
+    case 4:
+      topPos = $('#obstacle3').position().top;
+      var intervalMoveObsta3 = setInterval(function() {
+        var obstacleArray;
+        if (topPos < 650) {
+          obstacleArray = $('#obstacle3');
+          var speed = 10;
+          $('#obstacle3').css({
+            top: topPos += speed
+          });
+        } else {
+          $("#obstacle3").remove();
+        }
 
-      }
-    }
+      }, 300);
 
+      break;
+    default:
 
-  }, 200);
+  }
 
 };
