@@ -4,7 +4,10 @@ Player.prototype.movementPlayer = function() {
   $(document).on('keydown', function(e) {
     var x = $(".car-player1").position().left;
     var y = $(".car-player1").position().top;
-    console.log($(".car-player1").position());
+    var carTop = $(".obstacles").position().top;
+    var carBotton = carTop + 80;
+    var carLeft = $(".obstacles").position().left;
+    //console.log($(".car-player1").position());
     if (e.keyCode === 37) {
 
       if (x <= 5) {
@@ -30,10 +33,8 @@ Player.prototype.movementPlayer = function() {
         top: y += 20
       });
     } else if (e.keyCode === 38) {
-      if (y <= 2) {
-
+      if (y <= 2 ) {
         return;
-
       }
       $(".car-player1").css({
         top: y -= 20
@@ -42,4 +43,5 @@ Player.prototype.movementPlayer = function() {
     }
 
   });
+
 };

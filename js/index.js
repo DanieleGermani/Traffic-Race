@@ -13,10 +13,11 @@ Game.prototype.removeObstacle = function() {
 
 $( "#start" ).click(function() {
   var game = new Game ();
+  console.log("okokokokokkokokok");
   board.createObstacles();
   time._checkTimer();
   player.movementPlayer();
-  
+
 
 
 });

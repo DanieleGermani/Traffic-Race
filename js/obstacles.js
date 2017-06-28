@@ -5,12 +5,7 @@ function Obstacles(obstacleNumber) {
   this.positionY = -20;
   this.speed = 0;
 }
-Obstacles.prototype.checkObstacles = function() {
-  if ($(".car-player").collision(".obstacles").length > 0) {
-    console.log('me la he pegao!');
-  }
 
-};
 
 Obstacles.prototype.getRandomPositionX = function() {
   return Math.floor(Math.random() * 360);
@@ -27,15 +22,14 @@ Obstacles.prototype.drawObstacle = function() {
   numberId++;
 };
 
-
-
-
 Obstacles.prototype.moveObstacles = function() {
   console.log('el numero es : ' + numberId);
+
   switch (numberId) {
     case 1:
       var topPos = $('#obstacle0').position().top;
       var intervalMoveObsta0 = setInterval(function() {
+        checkObstacles();
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle0');
@@ -50,12 +44,13 @@ Obstacles.prototype.moveObstacles = function() {
 
         }
 
-      }, 300);
+      }, 200);
 
       break;
     case 2:
       topPos = $('#obstacle1').position().top;
       var intervalMoveObsta1 = setInterval(function() {
+        checkObstacles();
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle1');
@@ -68,11 +63,13 @@ Obstacles.prototype.moveObstacles = function() {
             top: topPos = -20,
           });
         }
-      }, 300);
+      }, 150);
+
       break;
     case 3:
       topPos = $('#obstacle2').position().top;
       var intervalMoveObsta2 = setInterval(function() {
+        checkObstacles();
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle2');
@@ -85,11 +82,13 @@ Obstacles.prototype.moveObstacles = function() {
             top: topPos = -20,
           });
         }
-      }, 300);
+      }, 180);
+
       break;
     case 4:
       topPos = $('#obstacle3').position().top;
       var intervalMoveObsta3 = setInterval(function() {
+        checkObstacles();
         var obstacleArray;
         if (topPos < 650) {
           obstacleArray = $('#obstacle3');
@@ -102,7 +101,8 @@ Obstacles.prototype.moveObstacles = function() {
             top: topPos = -20,
           });
         }
-      }, 300);
+      }, 200);
+
 
       break;
     default:
@@ -110,3 +110,11 @@ Obstacles.prototype.moveObstacles = function() {
   }
 
 };
+function checkObstacles() {
+    if($(".car-player1").collision(".obstacles").length > 0){
+      console.log("me la e pegao");
+    }
+
+
+
+}

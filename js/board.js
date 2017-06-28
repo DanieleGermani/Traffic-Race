@@ -7,7 +7,6 @@ Board.prototype.createObstacles = function(){
   var obstacle = new Obstacles();
   obstacle.drawObstacle();
   obstacle.moveObstacles();
-  obstacle.checkObstacles();
   setTimeout(function(){
     var obstacle2 = new Obstacles();
     obstacle2.drawObstacle();
