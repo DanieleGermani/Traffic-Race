@@ -11,22 +11,33 @@ Board.prototype.createObstacles = function(){
     var obstacle2 = new Obstacles();
     obstacle2.drawObstacle();
     obstacle2.moveObstacles();
-  }, 3000);
+  }, 2000);
   setTimeout(function(){
      var obstacle3 = new Obstacles();
      obstacle3.drawObstacle();
      obstacle3.moveObstacles();
-   }, 5000);
+   }, 4000);
   setTimeout(function(){
    var obstacle4 = new Obstacles();
     obstacle4.drawObstacle();
     obstacle4.moveObstacles();
-  }, 7000);
+  }, 6000);
   setTimeout(function(){
    var obstacle5 = new Obstacles();
     obstacle5.drawObstacle();
     obstacle5.moveObstacles();
-  }, 6000);
+  }, 8000);
+  setTimeout(function(){
+   var obstacle6 = new Obstacles();
+    obstacle6.drawObstacle();
+    obstacle6.moveObstacles();
+  }, 10000);
+  setTimeout(function(){
+   var obstacle7 = new Obstacles();
+    obstacle7.drawObstacle();
+    obstacle7.moveObstacles();
+  }, 10000);
+
 
 };
 Board.prototype.moveLine = function() {

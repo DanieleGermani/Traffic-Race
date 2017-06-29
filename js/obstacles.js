@@ -2,18 +2,17 @@ var numberId = 0;
 
 function Obstacles(obstacleNumber) {
   this.positionX= this.getRandomPositionX();
-  this.positionY = -20;
+  this.positionY = -90;
   this.speed = 0;
 }
 
 
 Obstacles.prototype.getRandomPositionX = function() {
-  return Math.floor(Math.random() * 700);
+  return Math.floor(Math.random() * 560);
 };
 
 
 Obstacles.prototype.drawObstacle = function() {
-  var positionX = this.getRandomPositionX();
   var width = $('#board').width();
   var newObstacle = $('<img src="img/car2.png" width="40px">').addClass('obstacles').attr('id', 'obstacle' +
     numberId).css({
@@ -105,9 +104,8 @@ Obstacles.prototype.moveObstacles = function() {
         }
       }, 200);
 
-
       break;
-      case 5:
+      case 6:
       topPos = $('#obstacle4').position().top;
       var intervalMoveObsta4 = setInterval(function() {
         checkObstacles();
@@ -124,8 +122,46 @@ Obstacles.prototype.moveObstacles = function() {
           });
         }
       }, 200);
-
         break;
+
+        case 7:
+        topPos = $('#obstacle5').position().top;
+        var intervalMoveObsta5 = setInterval(function() {
+          checkObstacles();
+          var obstacleArray;
+          if (topPos < 650) {
+            obstacleArray = $('#obstacle5');
+            var speed = 34;
+            $('#obstacle5').css({
+              top: topPos += speed
+            });
+          } else {
+            $("#obstacle5").css({
+              top: topPos = -20,
+            });
+          }
+        }, 200);
+        break;
+
+       case 8:
+        topPos = $('#obstacle6').position().top;
+        var intervalMoveObsta6 = setInterval(function() {
+          checkObstacles();
+          var obstacleArray;
+          if (topPos < 650) {
+            obstacleArray = $('#obstacle6');
+            var speed = 34;
+            $('#obstacle6').css({
+              top: topPos += speed
+            });
+          } else {
+            $("#obstacle6").css({
+              top: topPos = -20,
+            });
+          }
+        }, 200);
+        break;
+
     default:
 
   }
@@ -134,26 +170,23 @@ Obstacles.prototype.moveObstacles = function() {
 function checkObstacles() {
     if($(".car-player1").collision(".obstacles").length > 0){
       $(".result").text('PLAYER 2 WIN!!!!');
-      clearInterv();
+      clearInterval();
       return;
 
     }
     else if($(".car-player2").collision(".obstacles").length > 0) {
       $(".result").text('PLAYER 1 WIN!!!!');
-      clearInterv();
-
-
+      clearInterval();
 
     }
 
-
-
-
 }
-function clearInterv(){
+function clearInterval(){
   clearInterval(intervalMoveObsta0);
   clearInterval(intervalMoveObsta1);
   clearInterval(intervalMoveObsta2);
   clearInterval(intervalMoveObsta3);
   clearInterval(intervalMoveObsta4);
+  clearInterval(intervalMoveObsta5);
+  clearInterval(intervalMoveObsta6);
 }

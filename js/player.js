@@ -6,7 +6,7 @@ Player.prototype.movementPlayer1 = function() {
   $(document).on('keydown', function(e) {
     var x = $(".car-player1").position().left;
     var y = $(".car-player1").position().top;
-    //console.log($(".car-player1").position());
+
     if (e.keyCode === 37) {
 
       if (x <= 5) {
@@ -32,7 +32,7 @@ Player.prototype.movementPlayer1 = function() {
         top: y += 20
       });
     } else if (e.keyCode === 38) {
-      if (y <= 2 ) {
+      if (y <= 2) {
         return;
       }
       $(".car-player1").css({
@@ -73,7 +73,7 @@ Player.prototype.movementPlayer2 = function() {
         top: y += 20
       });
     } else if (e.keyCode === 87) {
-      if (y <= 2 ) {
+      if (y <= 2) {
         return;
       }
       $(".car-player2").css({

@@ -4,43 +4,40 @@
 <head>
   <meta charset="utf-8">
   <title>Trafic Race</title>
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-
-  <link href="./css/styles.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet" />
 
 </head>
 
 <body>
   <div class="container">
-    <div id="help">
-        <p>Controls: Right, Left, Up,Down:</p>
-    </div>
     <div id="score-div">
-       Score: <span id="score">0</span>
-   </div>
-   <div class="c-button">
-     <button class="btn" id="start"type="button" name="button">Start</button>
-   </div>
-   <div id="board">
-<div class="result">
-  <p class="text1"></p>
+      Score:<span id="score">0</span>
+    </div>
+    <!--  <div id="help">
+        <p>Player1: Right, Left, Up,Down:</p>
+        <p>Player2: A:Left, D:Rigth, W:Up, S:Down </p>
+    </div>-->
+    <div class="c-button">
+      <button class="btn" id="start" type="button" name="button">Start</button>
+    </div>
+    <div id="board">
+      <div class="result">
+        <p class="texto1"></p>
 
-</div>
-  <div id="line-1" class="line"></div>
+      </div>
+      <div id="line-1" class="line"></div>
 
-        <div id="car" class="car">
-            <img src="img/car.png" class="car-player1">
-        </div>
-        <div id="car1" class="car1">
-            <img src="img/car3.png" class="car-player2">
-        </div>
+      <div id="car" class="car">
+        <img src="img/car.png" class="car-player1">
+      </div>
+      <div id="car1" class="car1">
+        <img src="img/car3.png" class="car-player2">
+      </div>
+
+    </div>
 
   </div>
-
-
-
-
-</div>
 
   <script type="text/javascript" src="./lib/jquery-3.2.1/jquery-3.2.1.js"></script>
   <script type="text/javascript" src="./lib/jquery-collision/jquery-collision.js"></script>

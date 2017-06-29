@@ -1,64 +1,60 @@
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    background-color: #45d678;
-
-    font-family: 'Press Start 2P';
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #45d678;
+  font-family: 'Press Start 2P';
 }
-#board{
+
+#board {
   position: relative;
-   height: 650px;
-   width: 600px;
-   left: 35%;
-   margin-top: 20px;;
-   background-color: #292929;
-   overflow: hidden;
-   float: left;
-   margin-right: 10px;
-
+  height: 705px;
+  width: 600px;
+  background-color: #292929;
+  overflow: hidden;
+  margin: auto;
 }
 
-.line{
-    position: absolute;
-    height: 200px;
-    width: 4%;
-    margin-left: 48%;
-    background-color: rgba(255,255,255,0.5);
-}
-#line-1{
-    top: 150px;
+.line {
+  position: absolute;
+  height: 200px;
+  width: 4%;
+  margin-left: 48%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.car-player1{
+#line-1 {
+  top: 150px;
+}
+
+.car-player1 {
   width: 40px;
   position: absolute;
-  bottom: 0px;
-  left: 30%;
+  bottom: 10px;
+  left: 70%;
   height: 90px;
 }
-.car-player2{
+
+.car-player2 {
   width: 40px;
   position: absolute;
-  bottom: 0px;
-  left: 60%;
+  bottom: 10px;
+  left: 22%;
   height: 90px;
 }
-#score-div{
-    position: absolute;
-    margin-top: 20%;
-    margin-left: 2%;
-    font-size: 35px;
-    background-color: white;
-    color: #454545;
-    padding: 10px;
-    box-shadow: 4px 4px 0px 1px #808080;
 
+#score-div {
+  position: absolute;
+  font-size: 35px;
+  color: #454545;
+  margin-top: 5%;
+  margin-left: 76%;
 }
-.btn{
+
+.btn {
   position: absolute;
   margin-top: 5%;
-  margin-left: 2%;
+  margin-left: 7%;
   font-size: 27px;
   background-color: white;
   color: #454545;
@@ -68,23 +64,23 @@ body {
   font-family: 'Press Start 2P';
 }
 
-#help{
-	text-align: center;
+#help {
+  text-align: center;
 }
-.obstacles{
+
+.obstacles {
   position: absolute;
   height: 90px;
-
 }
-.result{
+
+.result {
   width: 580px;
   height: 100px;
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 10px;
   text-align: center;
   padding-top: 80px;
   color: white;
   font-size: 40px;
-
 }

@@ -5,11 +5,11 @@ function TimerCount() {
 
 TimerCount.prototype._checkTimer = function () {
   document.querySelector('#score').innerText = this.timer;
-    if(this.timer >= 0 && this.timer <= 500){
+    if(this.timer >= 0 && this.timer <= 200){
       this.timer += 1;
       this.timeOutId = setTimeout(this._checkTimer.bind(this),1000);
       }
     else{
-      document.querySelector('#score').innerText = "Time is over!!";
+      document.querySelector('#score').innerText = "YOU WIN!!!";
     }
 };
