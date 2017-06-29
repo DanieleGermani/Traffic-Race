@@ -23,7 +23,7 @@ Board.prototype.createObstacles = function(){
     obstacle4.moveObstacles();
   }, 7000);
   setTimeout(function(){
-   var obstacle4 = new Obstacles();
+   var obstacle5 = new Obstacles();
     obstacle5.drawObstacle();
     obstacle5.moveObstacles();
   }, 6000);

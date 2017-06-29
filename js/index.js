@@ -15,6 +15,8 @@ $( "#start" ).click(function() {
   board.createObstacles();
   time._checkTimer();
   player.movementPlayer1();
+  player.movementPlayer2();
   board.moveLine();
+  checkObstacles();
 
 });

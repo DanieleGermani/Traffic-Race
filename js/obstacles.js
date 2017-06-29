@@ -1,18 +1,19 @@
 var numberId = 0;
 
 function Obstacles(obstacleNumber) {
-  this.positionX = this.getRandomPositionX();
+  this.positionX= this.getRandomPositionX();
   this.positionY = -20;
   this.speed = 0;
 }
 
 
 Obstacles.prototype.getRandomPositionX = function() {
-  return Math.floor(Math.random() * 320);
+  return Math.floor(Math.random() * 700);
 };
 
 
 Obstacles.prototype.drawObstacle = function() {
+  var positionX = this.getRandomPositionX();
   var width = $('#board').width();
   var newObstacle = $('<img src="img/car2.png" width="40px">').addClass('obstacles').attr('id', 'obstacle' +
     numberId).css({
@@ -132,9 +133,27 @@ Obstacles.prototype.moveObstacles = function() {
 };
 function checkObstacles() {
     if($(".car-player1").collision(".obstacles").length > 0){
-      alert("BOOOOOMMMMMM");
+      $(".result").text('PLAYER 2 WIN!!!!');
+      clearInterv();
+      return;
+
+    }
+    else if($(".car-player2").collision(".obstacles").length > 0) {
+      $(".result").text('PLAYER 1 WIN!!!!');
+      clearInterv();
+
+
+
     }
 
 
 
+
+}
+function clearInterv(){
+  clearInterval(intervalMoveObsta0);
+  clearInterval(intervalMoveObsta1);
+  clearInterval(intervalMoveObsta2);
+  clearInterval(intervalMoveObsta3);
+  clearInterval(intervalMoveObsta4);
 }
