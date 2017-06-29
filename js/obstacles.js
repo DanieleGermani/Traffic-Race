@@ -8,8 +8,9 @@ function Obstacles(obstacleNumber) {
 
 
 Obstacles.prototype.getRandomPositionX = function() {
-  return Math.floor(Math.random() * 360);
+  return Math.floor(Math.random() * 320);
 };
+
 
 Obstacles.prototype.drawObstacle = function() {
   var width = $('#board').width();
@@ -105,6 +106,25 @@ Obstacles.prototype.moveObstacles = function() {
 
 
       break;
+      case 5:
+      topPos = $('#obstacle4').position().top;
+      var intervalMoveObsta4 = setInterval(function() {
+        checkObstacles();
+        var obstacleArray;
+        if (topPos < 650) {
+          obstacleArray = $('#obstacle4');
+          var speed = 34;
+          $('#obstacle4').css({
+            top: topPos += speed
+          });
+        } else {
+          $("#obstacle4").css({
+            top: topPos = -20,
+          });
+        }
+      }, 200);
+
+        break;
     default:
 
   }
@@ -112,7 +132,7 @@ Obstacles.prototype.moveObstacles = function() {
 };
 function checkObstacles() {
     if($(".car-player1").collision(".obstacles").length > 0){
-      console.log("me la e pegao");
+      alert("BOOOOOMMMMMM");
     }
 
 

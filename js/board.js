@@ -22,8 +22,33 @@ Board.prototype.createObstacles = function(){
     obstacle4.drawObstacle();
     obstacle4.moveObstacles();
   }, 7000);
+  setTimeout(function(){
+   var obstacle4 = new Obstacles();
+    obstacle5.drawObstacle();
+    obstacle5.moveObstacles();
+  }, 6000);
 
 };
+Board.prototype.moveLine = function() {
+  var linePos1 = $('.line').position().top;
+  var intervalLine1 = setInterval(function() {
+    if (linePos1 < 650) {
+      var speed = 25;
+      $('.line').css({
+        top: linePos1 += speed
+      });
+    } else {
+      $(".line").css({
+        top: linePos1 = -80,
+      });
+
+    }
+
+  }, 40);
+};
+
+
+
 
 Board.prototype.start = function(){
 };
