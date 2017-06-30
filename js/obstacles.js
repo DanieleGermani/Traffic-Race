@@ -11,7 +11,6 @@ Obstacles.prototype.getRandomPositionX = function() {
   return Math.floor(Math.random() * 560);
 };
 
-
 Obstacles.prototype.drawObstacle = function() {
   var width = $('#board').width();
   var newObstacle = $('<img src="img/car2.png" width="40px">').addClass('obstacles').attr('id', 'obstacle' +
@@ -45,7 +44,7 @@ Obstacles.prototype.moveObstacles = function() {
 
         }
 
-      }, 200);
+      }, 100);
 
       break;
     case 2:
@@ -102,7 +101,7 @@ Obstacles.prototype.moveObstacles = function() {
             top: topPos = -20,
           });
         }
-      }, 200);
+      }, 100);
 
       break;
       case 6:
@@ -140,7 +139,7 @@ Obstacles.prototype.moveObstacles = function() {
               top: topPos = -20,
             });
           }
-        }, 200);
+        }, 250);
         break;
 
        case 8:

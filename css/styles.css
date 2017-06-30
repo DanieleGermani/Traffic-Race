@@ -64,9 +64,6 @@ body {
   font-family: 'Press Start 2P';
 }
 
-#help {
-  text-align: center;
-}
 
 .obstacles {
   position: absolute;
@@ -83,4 +80,22 @@ body {
   padding-top: 80px;
   color: white;
   font-size: 40px;
+}
+
+.help-rigth{
+    width: 170px;
+    height: 200px;
+    position: absolute;
+    top: 450px;
+    left: 1060px;
+    text-align: left;
+}
+
+.help-left{
+    width: 190px;
+    height: 200px;
+    position: absolute;
+    top: 450px;
+    left: 62px;
+    text-align: left;
 }

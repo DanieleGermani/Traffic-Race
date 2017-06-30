@@ -5,8 +5,8 @@ var SoundMenu = new Audio('sounds/music.mp3');
 
 
 
-$( "#start" ).click(function() {
-  //var game = new Game ();
+
+$("#start").click(function() {
 
   board.createObstacles();
   time._checkTimer();
